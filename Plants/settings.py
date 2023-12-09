@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure--w^!j4%*#+8p(zn=fy21aga%&)^0emlk55r#fr^$4&&!04qo)6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app','.now.sh','127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -75,13 +75,17 @@ WSGI_APPLICATION = 'Plants.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': "B-ab2baCFb-3G5F4A2f1E--6dEFADEfG",
+        'HOST': 'viaduct.proxy.rlwy.net',
+        'PORT': '48581',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -127,7 +131,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 
 # Additional locations of static files
