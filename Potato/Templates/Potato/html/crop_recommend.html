@@ -1,0 +1,111 @@
+{% extends "Potato/html/mother.html" %}
+{% load static %} 
+{% block links %}
+<link rel="stylesheet" href="{% static 'Potato/css/crop_recommendation.css' %}">
+{% endblock %}
+{% block addlinks %}
+<li><a href="{% url 'Potato:index' %}" class="white">Go back</a></li>
+{% endblock %}
+
+{% block body %}
+
+<div class="my_recommendation">
+  <form action="{% url 'Potato:crop' %}" method="post" class="croprecomme">
+      {% csrf_token %}
+      <div class="middle_form">
+      <div class="title1"><h1>Crop recommender</h1></div>
+      <label for="nitrogen">Nitrogen (N)</label>
+      <input type="number" step="any" name="N" id="nitrogen">
+
+      <label for="phosphore">Phosphore (P)</label>
+      <input type="number" step="any" name="P" id="phosphore">
+      
+      <label for="potassium">Potassium (K)</label>
+      <input type="number" step="any" name="K" id="potassium">
+      
+      <label for="temperature">Temperature (°C)</label>
+      <input type="number" step="any" name="C" id="temperature">
+      
+      <label for="humidity">Humidity</label>
+      <input type="number" step="any" name="H" id="humidity">
+      
+      <label for="ph">pH</label>
+      <input type="number" step="any" name="PH" id="ph">
+      
+      <label for="rainfall">Rainfall (mm)</label>
+      <input type="number" step="any" name="mm" id="rainfall">
+      
+      <button type="submit">Send</button>
+      </div>
+  </form>
+  <div class="fertilizer-predictions">
+   
+    {% if first_class %}
+    <div class="fertilizer-container">
+        {% for picture in first_class %}
+        
+            <a href="{% url 'Potato:plantInformation' picture.id %}">
+                <div class="fertilizer-box">
+                    <img class="image" src="{{picture.preview.url}}">
+                    <div class="fertilizer-details">
+                        <h1 class="fertilizer-title">1. {{ picture.title }}</h1>
+                        <p class="fertilizer-details">{{picture.comments}}</p>
+                        <button>Details</button>
+                    </div>
+                    
+                </div>
+            </a>
+        {% empty %}
+                <h1>You have not uploaded any file</h1>
+
+        {% endfor %}
+    </div>
+    {% endif %}
+
+
+    {% if second_class %}
+    <div class="fertilizer-container">
+        {% for picture in second_class %}
+        
+            <a href="{% url 'Potato:plantInformation' picture.id %}">
+                <div class="fertilizer-box">
+                    <img class="image" src="{{picture.preview.url}}">
+                    <div class="fertilizer-details">
+                        <h1 class="fertilizer-title">2. {{ picture.title }}</h1>
+                        <p class="fertilizer-details">{{picture.comments}}</p>
+                        <button>Details</button>
+                    </div>
+                    
+                </div>
+            </a>
+        {% empty %}
+                <h1>You have not uploaded any file</h1>
+
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if third_class %}
+    <div class="fertilizer-container">
+        {% for picture in third_class %}
+        
+            <a href="{% url 'Potato:plantInformation' picture.id %}">
+                <div class="fertilizer-box">
+                    <img class="image" src="{{picture.preview.url}}">
+                    <div class="fertilizer-details">
+                        <h1 class="fertilizer-title">3. {{ picture.title }}</h1>
+                        <p class="fertilizer-details">{{picture.comments}}</p>
+                        <button>Details</button>
+                    </div>
+                    
+                </div>
+            </a>
+        {% empty %}
+                <h1>You have not uploaded any file</h1>
+
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+</div>
+{% endblock %}

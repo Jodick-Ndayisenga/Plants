@@ -1,0 +1,98 @@
+{% extends "Potato/html/mother.html" %}
+{% load static %} 
+{% block links %}
+<link rel="stylesheet" href="{% static 'Potato/css/plantinformation.css' %}">
+{% endblock %}
+{% block addlinks %}
+<li><a href="{% url 'Potato:index' %}" class="white">Go back</a></li>
+{% endblock %}
+{% block body %}
+<div class="my_plantinfo">
+
+<div class="plantInformation">
+    {% if plantInfo %}
+
+    <div class="plantinfo-container">
+        {% for picture in plantInfo %}
+
+        {% if picture.item.title == "rice"  %}
+        
+            <h1> Farming {{ picture.item.title }} conditions </h1>
+            <div class="plant-box">
+                <img class="image" src="{{picture.item.preview.url}}">
+                    <h2>Ingredients for Rice Farming:</h2>
+                    <ul>
+                        <li><strong>Nitrogen (N):</strong> Nitrogen is a crucial component for the formation of chlorophyll, the green pigment responsible for photosynthesis. It promotes vigorous leaf and stem development, enhancing the overall growth of the rice plant.</li>
+                        <li><strong>Phosphorus (P):</strong> Phosphorus plays a key role in energy transfer and storage. It is essential for root development, early establishment, and flowering in rice plants. Adequate phosphorus ensures strong and healthy root systems, facilitating nutrient uptake.</li>
+                        <li><strong>Potassium (K):</strong> Potassium is vital for various physiological processes in rice, including enzyme activation, osmoregulation, and disease resistance. It contributes to overall plant health, helps in water uptake, and supports the structural integrity of the plant.</li>
+                    </ul>
+
+                    <h2>Environmental Factors:</h2>
+                    <ul>
+                        <li><strong>Temperature:</strong> Rice is a warm-season crop and requires specific temperature ranges for optimal growth. Warmer temperatures, typically between 20-37°C (68-98.6°F), promote germination, photosynthesis, and the development of rice grains. Cold temperatures can hinder these processes and affect yield.</li>
+                        <li><strong>Humidity:</strong> High humidity levels are essential during the growing season to support rice plant growth and reproduction. Rice plants thrive in humid conditions (above 60%) as it aids in pollen germination, fertilization, and prevents water loss through transpiration.</li>
+                        <li><strong>pH Level:</strong> The pH level of the soil affects nutrient availability to rice plants. Rice prefers slightly acidic to neutral soil with a pH range of 6.0-7.5. This pH range optimizes the availability of essential nutrients like phosphorus and iron, crucial for healthy plant development.</li>
+                        <li><strong>Rainfall:</strong> Adequate water supply is critical for rice cultivation. Rice fields are often flooded to ensure a consistent water supply, suppress weed growth, and provide an anaerobic environment that benefits rice plants. Proper water management is essential to prevent waterlogging and optimize yield.</li>
+                    </ul>
+
+                    <p>Rice farming requires a delicate balance of these ingredients and environmental conditions to ensure a successful crop. Understanding and managing these factors contribute to healthy plant growth, high yields, and overall agricultural sustainability.</p>
+
+                <p class="fertilizer-details">{{picture.des_sizes}}</p>
+            </div>
+            {% elif picture.item.title == "wheat" %}
+            <h1> Farming {{ picture.item.title }} conditions </h1>
+            <div class="plant-box">
+                <img class="image" src="{{picture.item.preview.url}}">
+                <h2>Ingredients for Wheat Farming:</h2>
+                <ul>
+                    <li><strong>Nitrogen (N):</strong> Nitrogen is essential for protein synthesis in wheat. It promotes robust leaf and stem development, contributing to the overall structure and health of the plant. Adequate nitrogen supports the formation of grains and enhances yield.</li>
+                    <li><strong>Phosphorus (P):</strong> Phosphorus is crucial for energy transfer, root development, and early growth stages in wheat. It plays a key role in the development of root systems, ensuring efficient nutrient uptake and supporting the transition from vegetative to reproductive growth.</li>
+                    <li><strong>Potassium (K):</strong> Potassium is necessary for wheat's overall stress tolerance, water uptake, and grain formation. It contributes to disease resistance, strengthens cell walls, and helps in the efficient use of water, particularly during critical growth stages.</li>
+                </ul>
+                
+                <h2>Environmental Factors:</h2>
+                <ul>
+                    <li><strong>Temperature:</strong> Wheat is a cool-season crop and prefers cooler temperatures for optimal growth. The ideal temperature range for wheat cultivation is typically between 15-24°C (59-75.2°F) during the growing season. Cooler temperatures promote grain filling and quality.</li>
+                    <li><strong>Humidity:</strong> While wheat is more adaptable to lower humidity compared to rice, moderate humidity levels are still beneficial for wheat farming. Adequate humidity supports grain development and reduces the risk of diseases such as rust and powdery mildew.</li>
+                    <li><strong>pH Level:</strong> Wheat grows well in slightly acidic to neutral soils with a pH range of 6.0-7.5. Maintaining the correct pH level is essential for nutrient availability, especially phosphorus, and supports optimal wheat growth and development.</li>
+                    <li><strong>Rainfall:</strong> Wheat cultivation requires a well-distributed water supply. While wheat can tolerate drier conditions compared to rice, consistent and timely rainfall or irrigation is crucial, especially during critical growth stages like flowering and grain filling.</li>
+                </ul>
+                
+                <p>Successful wheat farming involves managing these ingredients and environmental conditions to ensure a healthy crop. Understanding the specific needs of wheat plants contributes to improved yields, quality grains, and sustainable agricultural practices.</p>
+                
+                <p class="fertilizer-details">{{picture.des_sizes}}</p>
+            </div>
+            {% elif picture.item.title == "barley" %}
+            <h1> Farming {{ picture.item.title }} conditions </h1>
+            <div class="plant-box">
+                <img class="image" src="{{picture.item.preview.url}}">
+                <h2>Ingredients for Barley Farming:</h2>
+<ul>
+    <li><strong>Nitrogen (N):</strong> Nitrogen is crucial for barley's protein synthesis and overall plant development. Adequate nitrogen supports healthy foliage, tillering, and contributes to robust grain formation. It plays a key role in achieving high barley yields.</li>
+    <li><strong>Phosphorus (P):</strong> Phosphorus is essential for energy transfer, root development, and the early growth stages of barley. It promotes strong root systems, efficient nutrient uptake, and supports the transition from vegetative to reproductive growth, influencing grain development.</li>
+    <li><strong>Potassium (K):</strong> Potassium is vital for barley's stress tolerance, water regulation, and grain filling. It enhances disease resistance, strengthens cell walls, and contributes to the overall quality of barley grains. Adequate potassium ensures optimal yield and quality.</li>
+</ul>
+
+<h2>Environmental Factors:</h2>
+<ul>
+    <li><strong>Temperature:</strong> Barley is a cool-season crop and thrives in cooler temperatures. The ideal temperature range for barley cultivation is typically between 10-25°C (50-77°F). Cool temperatures during the growing season support vigorous growth, grain development, and quality.</li>
+    <li><strong>Humidity:</strong> Barley is adaptable to varying humidity levels but generally prefers moderate humidity. Adequate humidity supports grain filling and reduces the risk of diseases such as powdery mildew. Proper ventilation is essential to prevent humidity-related issues.</li>
+    <li><strong>pH Level:</strong> Barley prefers slightly acidic to neutral soils with a pH range of 6.0-7.5. Maintaining the correct pH level is crucial for nutrient availability, especially phosphorus and micronutrients, supporting optimal barley growth and development.</li>
+    <li><strong>Rainfall:</strong> Barley cultivation requires well-distributed rainfall or irrigation. Barley is more drought-tolerant compared to some other cereal crops, but consistent moisture is crucial, especially during key growth stages like heading and flowering.</li>
+</ul>
+
+<p>Barley farming involves carefully managing these ingredients and environmental conditions to ensure a successful crop. Understanding the specific needs of barley plants contributes to improved yields, quality grains, and sustainable agricultural practices.</p>
+
+                <p class="fertilizer-details">{{picture.des_sizes}}</p>
+            
+            {% endif %}
+
+        {% empty %}
+                <h1>You have not uploaded any file</h1>
+
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+</div>
+{% endblock %}

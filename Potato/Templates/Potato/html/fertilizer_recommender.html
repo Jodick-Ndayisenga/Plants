@@ -1,0 +1,87 @@
+{% extends "Potato/html/mother.html" %}
+{% load static %} 
+{% block links %}
+<link rel="stylesheet" href="{% static 'Potato/css/fertilizer_recommendation.css' %}">
+{% endblock %}
+{% block addlinks %}
+<li><a href="{% url 'Potato:index' %}" class="white">Go back</a></li>
+{% endblock %}
+{% block body %}
+<div class="my_recommendation">
+<form action="{% url 'Potato:fertilizer' %}" method="post" class="croprecomme">
+    {% csrf_token %}
+    <div class="middle_form">
+        <div class="title1"><h1>fertilizer recommender</h1></div>
+         <!-- Select options for crops -->
+         <label for="crop">Select Crop</label>
+         <select name="crop" id="crop">
+             <option value="">Choose option</option>
+             <option value="0">Barley</option>
+             <option value="1">Cotton</option>
+             <option value="2">Ground Nuts</option>
+             <option value="3">Maize</option>
+             <option value="4">Millets</option>
+             <option value="5">Oil seeds</option>
+             <option value="6">Paddy</option>
+             <option value="7">Pulses</option>
+             <option value="8">Sugarcane</option>
+             <option value="9">Tobacco</option>
+             <option value="10">Wheat</option>
+         </select>
+ 
+         <!-- Select options for soil types -->
+         <label for="soil_type">Select Soil Type</label>
+         <select name="soil_type" id="soil_type">
+             <option value="">Choose option</option>
+             <option value="0">Black</option>
+             <option value="1">Clayey</option>
+             <option value="2">Loamy</option>
+             <option value="3">Red</option>
+             <option value="4">Sandy</option>
+         </select>
+        <label for="nitrogen">Nitrogen (N)</label>
+        <input type="number" step="any" name="N" id="nitrogen">
+
+        <label for="phosphore">Phosphorus (P)</label>
+        <input type="number" step="any" name="P" id="phosphorus">
+
+        <label for="potassium">Potassium (K)</label>
+        <input type="number" step="any" name="K" id="potassium">
+
+        <label for="temperature">Temperature (°C)</label>
+        <input type="number" step="any" name="C" id="temperature">
+
+        <label for="humidity">Humidity</label>
+        <input type="number" step="any" name="H" id="humidity">
+
+        <label for="moisture">Moisture</label>
+        <input type="number" step="any" name="moi" id="moisture">
+        <button type="submit">Send</button>
+    </div>
+</form>
+<div class="fertilizer-predictions">
+    {% if all_fertilizers %}
+
+    <div class="fertilizer-container">
+        
+        {% for picture in all_fertilizers %}
+            <a href="">
+                <div class="fertilizer-box">
+                    <img class="image" src="{{picture.preview.url}}">
+                    <div class="fertilizer-details">
+                        <h1 class="fertilizer-title">{{ picture.title }}</h1>
+                        <p class="fertilizer-details">{{picture.comments}}</p>
+                        <button>Details</button>
+                    </div>
+                    
+                </div>
+            </a>
+        {% empty %}
+                <h1>You have not uploaded any file</h1>
+
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+</div>
+{% endblock %}

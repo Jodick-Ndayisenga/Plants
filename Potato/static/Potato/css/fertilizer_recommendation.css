@@ -1,0 +1,178 @@
+.my_recommendation{
+    width: 100%;
+    height: auto;
+    
+}
+
+.my_recommendation form{
+    width: 100%;
+    height: 92.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../Potato/images/jj.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.my_recommendation form div{
+    display: flex;
+    flex-direction: column;
+    background-color:rgba(0,0,0,0.6);
+    width: 400px;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.my_recommendation form div input{
+    background-color: rgba(0,0,0,0.5);
+    margin-bottom: 10px;
+    outline: none;
+    height: 28px;
+    letter-spacing: 2px;
+    border: 0px;
+    border-bottom: 2px solid gray;
+    padding: 3px 4px;
+    font-size: 18px;
+    color: rgb(203, 202, 202);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.my_recommendation form div select{
+    background-color: rgba(0,0,0,0.5);
+    margin-bottom: 7px;
+    outline: none;
+    height: 24px;
+    letter-spacing: 2px;
+    border: 0px;
+    border-bottom: 2px solid gray;
+    padding: 2px 3px;
+    font-size: 14px;
+    color: rgb(203, 202, 202);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.my_recommendation form div label{
+    color: rgb(227, 226, 226);
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.my_recommendation form div button{
+    height: 35px;
+    background-color: #0fa20f;
+    color: #fff;
+    border: none;
+    font-size: 23px;
+    transition: all 0.5s ease-in-out;
+}
+
+.my_recommendation form div button:hover{
+    cursor: pointer;
+    height: 37px;
+    background-color: #107610;
+    color: #fff;
+    border: none;
+    font-size: 23px;
+}
+
+.my_recommendation form div .title1{
+    margin-left: -10px;
+    margin-top: -5px;
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+.my_recommendation form div .title1 h1{
+    color: rgb(189, 186, 186);
+    text-transform: uppercase;
+    font-size: 26px;
+}
+
+
+.my_recommendation .fertilizer-predictions{
+    width: 100%;
+    background-color: #fefdf9;
+}
+.my_recommendation .fertilizer-predictions .fertilizer-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fefdf9;
+}
+.my_recommendation .fertilizer-predictions .fertilizer-container a{
+    width: 340px;
+    height:450px;
+    margin: 15px;
+    background-color:#fefdf9;
+    box-shadow: 0 0 15px 3px rgba(0,0,0,0.4);
+    border-radius: 7px;
+    padding: 10px;
+
+}
+
+.my_recommendation .fertilizer-predictions .fertilizer-container a .fertilizer-box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+    background-color: #fefdf9;
+}
+
+.my_recommendation .fertilizer-predictions .fertilizer-container a .fertilizer-box img{
+    width: 300px;
+    height: 250px;
+    background-color: #fff;
+}
+
+.my_recommendation .fertilizer-predictions .fertilizer-container a .fertilizer-box .fertilizer-details{
+    width: 340px;
+    margin-left: -10px;
+    margin-top: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px 3px rgba(0,0,0,0.2);
+    border-radius: 7px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    background-color: #fff;
+}
+.my_recommendation .fertilizer-predictions .fertilizer-container a .fertilizer-box .fertilizer-details .fertilizer-title{
+    width: 100%;
+    background-color:#0fa20f;
+    padding: 7px 15px;
+    color: #fff;
+    height: 32px;
+    font-size: 18px;
+    text-align: center;
+    margin-top:0px;
+    margin-bottom: 8px;
+    border-radius: 3px;
+}
+.my_recommendation .fertilizer-predictions .fertilizer-container a .fertilizer-box .fertilizer-details p{
+    width: 100%;
+    height:65px;
+    margin-left: 0px;
+    margin-top: 0px;
+    padding: 5px;
+    text-align: center;
+    color: #000;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.my_recommendation .fertilizer-predictions .fertilizer-container a .fertilizer-box .fertilizer-details button{
+    margin: 11px 0px;
+    margin-top: 17px;
+    margin-bottom: 5px;
+    background-color: #0fa20f;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 5px 10px;
+    border: none;
+    pointer-events: none;
+}
